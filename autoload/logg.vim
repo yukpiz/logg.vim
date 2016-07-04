@@ -1,6 +1,6 @@
 function! logg#write(msg, tag)
-    let hoge = a:msg
-    let hoge2 = a:tag
+    echo a:msg
+    echo a:tag
 lua << EOC
     fout = io.open('logg.log', 'a')
     fout:write(vim.eval('a:msg'))
