@@ -5,45 +5,62 @@ let s:tag_matches = {
 \}
 
 function! logg#debug(msg, tag)
-  let l:line = logg#parse_line(a:msg, a:tag)
+  let l:line = s:parse_line(a:msg, a:tag)
+  call s:write(l:line)
 endfunction
 
 function! logg#warn(msg, tag)
-  let l:line = logg#parse_line(a:msg, a:tag)
+  let l:line = s:parse_line(a:msg, a:tag)
+  call s:write(l:line)
 endfunction
 
 function! logg#error(msg, tag)
-  let l:line = logg#parse_line(a:msg, a:tag)
+  let l:line = s:parse_line(a:msg, a:tag)
+  call s:write(l:line)
 endfunction
 
-function! logg#write(line)
+function! s:write(line)
+lua << EOL
+  fout = io.open(vim.eval('g:logg_file_path'), 'a')
+  if fout == nil then
+    return
+  end
+  fout:write(vim.eval('a:line') .. '\n')
+  fout:close()
+EOL
 endfunction
 
-function! logg#parse_line(msg, tag)
+function! s:parse_line(msg, tag)
   let l:lines = []
 
   "Parse Log TimeStamp
-  call add(l:lines, logg#parse_time(g:logg_time_format))
+  call add(l:lines, s:parse_time(g:logg_time_format))
 
   "Parse Log Tag
-  call add(l:lines, logg#parse_tag(a:tag))
+  call add(l:lines, s:parse_tag(a:tag))
 
   "Parse Log Message
-  call add(l:lines, a:msg)
+  call add(l:lines, s:parse_msg(a:msg))
 
   return join(l:lines, ' ')
 endfunction
 
-function! logg#sandwitch_brackets(val)
+function! s:sandwitch_brackets(val)
   return '[' . a:val . ']'
 endfunction
 
-function! logg#parse_tag(tag)
-  return has_key(s:tag_matches, a:tag) ?
-  \ logg#sandwitch_brackets(s:tag_matches[a:tag]) : ''
+function! s:parse_time(format)
+  let l:time = strftime(a:format)
+  return s:sandwitch_brackets(l:time)
 endfunction
 
-function! logg#parse_time(format)
-  let l:time = strftime(a:format)
-  return logg#sandwitch_brackets(l:time)
+function! s:parse_tag(tag)
+  return has_key(s:tag_matches, a:tag) ?
+  \ s:sandwitch_brackets(s:tag_matches[a:tag]) : ''
+endfunction
+
+function! s:parse_msg(msg)
+  let l:msg = substitute(a:msg, '^\"', '', 'g')
+  return substitute(l:msg, '\"$', '', 'g')
+  return l:msg
 endfunction
