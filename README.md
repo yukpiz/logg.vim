@@ -24,8 +24,7 @@ Public Domain
 
 # Author
 
-Yuuki Zayasu(yukpiz)  
-yukpiz@gmail.com :e-mail:  
+Yuuki Zayasu(yukpiz@gmail.com:e-mail:)  
 
 
 
