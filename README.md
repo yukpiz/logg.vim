@@ -27,7 +27,7 @@ NeoBundle 'yukpiz/logg.vim'
 ```
 
 
-# How to
+# How to use
 
 You can be output the log messages.  
 
