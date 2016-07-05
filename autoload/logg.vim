@@ -19,6 +19,7 @@ function! logg#error(msg, tag)
   call s:write(l:line)
 endfunction
 
+" @vimlint(EVL103, 1, a:line)
 function! s:write(line)
 lua << EOL
   fout = io.open(vim.eval('g:logg_file_path'), 'a')
