@@ -46,15 +46,14 @@ Log file is output in default to the your ``$HOME`` directory,
 And you can change the settings.  
 
 ```vim
-let g:logg_file_path = $HOME . '/.vim/LOGFILE.log'
+let g:logg_file_path = $HOME . '/logg.log'
 ```
 
 Date format will can be change.  
-Default ``%c``.  
-:point_up:[Learn the date format](http://vim.wikia.com/wiki/Insert_current_date_or_time)  
+Default ``%c``, [Learn the date format](http://vim.wikia.com/wiki/Insert_current_date_or_time):point_up:  
 
 ```vim
-let g:logg_date_format = '%Y-%m-%d %H:%M:%S'
+let g:logg_date_format = '%c'
 ```
 
 
