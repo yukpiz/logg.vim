@@ -12,9 +12,57 @@ logg.vim is a support for **logger** from VimScript.
 * Lua interface(+lua).
 
 
+# Installation
+
+Your ``.vimrc`` :simple_smile:  
+
+```vim
+dein#add('yukpiz/logg.vim')
+```
+
+or  
+
+```vim
+NeoBundle 'yukpiz/logg.vim'
+```
+
+
 # How to
 
-* TODO
+You can be output the log messages.  
+
+```vim
+call logg#debug('DEBUG MESSAGE.')
+```
+
+Other functions.  
+
+```vim
+call logg#error('ERROR MESSAGE.')
+call logg#warn('WARNING MESSAGE.')
+```
+
+Log file is output in default to the your ``$HOME`` directory,  
+And you can change the settings.  
+
+```vim
+let g:logg_file_path = $HOME . '/.vim/LOGFILE.log'
+```
+
+Date format will can be change.  
+Default ``%c``.  
+:point_up:[Learn the date format](http://vim.wikia.com/wiki/Insert_current_date_or_time)  
+
+```vim
+let g:logg_date_format = '%Y-%m-%d %H:%M:%S'
+```
+
+
+
+# Features
+
+* Log message format  
+    ``[%D(ate)] [%T(ag)] %M(essage)``  
 
 
 # License
