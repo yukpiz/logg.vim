@@ -4,18 +4,18 @@ let s:tag_matches = {
 \ 3: 'ERROR',
 \}
 
-function! logg#debug(msg, tag)
-  let l:line = s:parse_line(a:msg, a:tag)
+function! logg#debug(msg)
+  let l:line = s:parse_line(a:msg, 1)
   call s:write(l:line)
 endfunction
 
-function! logg#warn(msg, tag)
-  let l:line = s:parse_line(a:msg, a:tag)
+function! logg#warn(msg)
+  let l:line = s:parse_line(a:msg, 2)
   call s:write(l:line)
 endfunction
 
-function! logg#error(msg, tag)
-  let l:line = s:parse_line(a:msg, a:tag)
+function! logg#error(msg)
+  let l:line = s:parse_line(a:msg, 3)
   call s:write(l:line)
 endfunction
 

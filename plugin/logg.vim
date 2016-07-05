@@ -8,6 +8,6 @@ if g:logg_debug || !exists('g:logg_file_path')
   let g:logg_file_path = $HOME . '/logg.log'
 endif
 
-command! DebugLogg call logg#debug(<f-args>, 1)
-command! WarnLogg  call logg#warn(<f-args>, 2)
-command! ErrorLogg call logg#error(<f-args>, 3)
+command! DebugLogg call logg#debug(<f-args>)
+command! WarnLogg  call logg#warn(<f-args>)
+command! ErrorLogg call logg#error(<f-args>)
