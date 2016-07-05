@@ -1,4 +1,4 @@
-let g:logg_debug = 1
+let g:logg_debug = 0
 
 if g:logg_debug || !exists('g:logg_time_format')
   let g:logg_time_format = '%c'
