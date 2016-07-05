@@ -14,7 +14,7 @@ logg.vim is a support for **logger** from VimScript.
 
 # Installation
 
-Your ``.vimrc`` :simple_smile:  
+Your ``.vimrc`` :laughing:  
 
 ```vim
 dein#add('yukpiz/logg.vim')
