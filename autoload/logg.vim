@@ -62,5 +62,4 @@ endfunction
 function! s:parse_msg(msg)
   let l:msg = substitute(a:msg, '^\"', '', 'g')
   return substitute(l:msg, '\"$', '', 'g')
-  return l:msg
 endfunction
