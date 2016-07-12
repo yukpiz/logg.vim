@@ -58,7 +58,7 @@ let g:logg_date_format = '%c'
 
 
 
-# Features
+# Next Features
 
 * Log message format  
     ``[%D(ate)] [%T(ag)] %M(essage)``  
