@@ -1,6 +1,7 @@
 # About
 
-[![Build Status](https://travis-ci.org/yukpiz/logg.vim.svg?branch=master)](https://travis-ci.org/yukpiz/logg.vim)  
+[![Build Status](https://travis-ci.org/yukpiz/logg.vim.svg?branch=master)](https://travis-ci.org/yukpiz/logg.vim)
+![Public Domain](https://img.shields.io/badge/License-Public%20Domain-green.svg)  
 
 logg.vim is a support for **logger** from VimScript.  
 **!! Current version is the beta !!**
@@ -66,7 +67,7 @@ let g:logg_date_format = '%c'
 
 # License
 
-![Public Domain](https://img.shields.io/badge/License-Public%20Domain-green.svg)  
+Public Domain
 
 
 # Author
