@@ -66,7 +66,7 @@ let g:logg_date_format = '%c'
 
 # License
 
-[![Public Domain](https://img.shields.io/badge/License-Public%20Domain-green.svg)]()  
+![Public Domain](https://img.shields.io/badge/License-Public%20Domain-green.svg)  
 
 
 # Author
